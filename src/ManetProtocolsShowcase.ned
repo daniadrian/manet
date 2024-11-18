@@ -22,7 +22,8 @@ network ManetprotocolsShowcaseA
         @figure[tree5](type=image; image="showcases/tree"; pos=0,0; transform=scale(0.1),translate(990,530));
         @figure[tree6](type=image; image="showcases/tree"; pos=0,0; transform=scale(0.1),translate(1050,600));
         @figure[tree7](type=image; image="showcases/tree"; pos=0,0; transform=scale(0.1),translate(1170,620));
-    submodules:
+    
+     submodules:
         radioMedium: Ieee80211ScalarRadioMedium {
             @display("p=100,100");
         }
@@ -79,86 +80,88 @@ network ManetprotocolsShowcaseA
 network ManetprotocolsShowcaseB
 {
     parameters:
-        @display("bgb=400,400");
-        @statistic[numRcvdPk](source=count(source.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+        @display("bgb=2000,2000");
+        @statistic[numRcvdPk](source=count(source1.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+        @statistic[numRcvdPk](source=count(source2.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+        @statistic[numRcvdPk](source=count(source3.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+        @statistic[numRcvdPk](source=count(source4.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
+        @statistic[numRcvdPk](source=count(source5.app[0].pingRxSeq); record=figure; targetFigure=numRcvdPkCounter; checkSignals=false);
         @figure[numRcvdPkCounter](type=counter; transform=scale(0.5); pos=50,300; label="Received ping replies"; decimalPlaces=4);
-        @statistic[numLost](source=count(source.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+        @statistic[numLost](source=count(source1.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+        @statistic[numLost](source=count(source2.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+        @statistic[numLost](source=count(source3.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+        @statistic[numLost](source=count(source4.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
+        @statistic[numLost](source=count(source5.app[0].numLost); record=figure; targetFigure=numLostPkCounter; checkSignals=false);
         @figure[numLostPkCounter](type=counter; transform=scale(0.5); pos=50,400; label="Pings lost"; decimalPlaces=4);
-       
-    submodules:
-        source: ManetRouter {
-            @display("p=104,335");
+    
+submodules:   
+		source1: ManetRouter {
+            @display("p=1040,1335");
+        }
+        source2: ManetRouter {
+            @display("p=900,835");
+        }
+        source3: ManetRouter {
+            @display("p=1200,335");
+        }
+        source4: ManetRouter {
+            @display("p=1200,1335");
+        }
+        source5: ManetRouter {
+            @display("p=750,1335");
         }
         node1: ManetRouter {
-            @display("p=104,226");
+            @display("p=1040,1226");
         }
         node2: ManetRouter {
-            @display("p=175,140");
+            @display("p=750,1140");
         }
         node3: ManetRouter {
-            @display("p=238,276");
+            @display("p=1100,1276");
         }
         node4: ManetRouter {
-            @display("p=312,196");
+            @display("p=1200,1196");
         }
         node5: ManetRouter {
-            @display("p=350,120");
+            @display("p=350,1120");
         }
-         node6: ManetRouter {
-            @display("p=147,67");
+        node6: ManetRouter {
+            @display("p=1470,1067");
         }
         node7: ManetRouter {
-            @display("p=60,125");
+            @display("p=600,1125");
         }
         node8: ManetRouter {
-            @display("p=250,80");
+            @display("p=1250,1080");
         }
         node9: ManetRouter {
-            @display("p=200,180");
+            @display("p=1500,1500");
         }
         node10: ManetRouter {
-            @display("p=300,250");
+            @display("p=400,1200");
         }
-        node11: ManetRouter {
-            @display("p=150,300");
+        destination1: ManetRouter {
+            @display("p=1500,300");
         }
-        node12: ManetRouter {
-            @display("p=100,200");
+        destination2: ManetRouter {
+            @display("p=100,600");
         }
-        node13: ManetRouter {
-            @display("p=75,350");
+        destination3: ManetRouter {
+            @display("p=200,1500");
         }
-        node14: ManetRouter {
-            @display("p=350,75");
+        destination4: ManetRouter {
+            @display("p=1600,500");
         }
-        node15: ManetRouter {
+        destination5: ManetRouter {
             @display("p=320,180");
         }
-        node16: ManetRouter {
-            @display("p=270,130");
-        }
-        node17: ManetRouter {
-            @display("p=230,220");
-        }
-        node18: ManetRouter {
-            @display("p=220,150");
-        }
-        node19: ManetRouter {
-            @display("p=180,210");
-        }
-        node20: ManetRouter {
-            @display("p=300,250");
-        }
-        destination: ManetRouter {
-            @display("p=292,80");
-        }
         radioMedium: Ieee80211ScalarRadioMedium {
-            @display("p=38,28");
+            @display("p=50,250");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=38.461544,66.863914");
+            @display("p=50.461544,350");
         }
         visualizer: IntegratedMultiVisualizer {
-            @display("p=38.461544,106.50889");
+            @display("p=50.461544,500");
         }
 }
