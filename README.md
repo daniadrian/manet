@@ -47,7 +47,7 @@ Before you start, make sure you have:
    - Ping Losses: See how often the network struggled.
 
 ---
-🔧 Customize Your Simulation!
+## 🔧 Customize Your Simulation!
 Want to tweak things? Here’s how:
 - Change Node Speeds: In omnetpp.ini, adjust the speed range:`
 ```
