@@ -29,7 +29,7 @@ Before you start, make sure you have:
 ### Steps to Run the Simulation
 1. Clone this repo:
    ```
-   git clone [<REPOSITORY_URL>](https://github.com/daniadrian/manet.git)
+   git clone https://github.com/daniadrian/manet.git
    cd manet2
    ```
 2. Open the project in OMNeT++ IDE.
